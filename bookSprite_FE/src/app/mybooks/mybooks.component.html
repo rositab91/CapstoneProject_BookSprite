@@ -1,0 +1,38 @@
+<app-navbar></app-navbar><br>
+<div class="container">
+  <div class="card-container">
+    <div class="card" *ngFor="let book of userbooks; let i = index">
+      <img class="card-img-top" style="height: 40%" src="{{book.thumbnail}}" alt="Card image cap">
+      <div class="card-body d-flex align-items-center">
+        <h5 class="card-title mb-3 text-center">{{book.title}}</h5>
+        <p>Average Rating: {{ book.averageRating }}</p>
+        <p>My Book Rating: {{ book.rating }}</p>
+        <div class="icons mb-5 mt-3" style="display: flex;">
+          <i (click)="readingNow(book, i)" class="fas fa-book-reader" style="color: cornflowerblue" title="Reading now"></i>
+          <i (click)="toRead(book, i)" class="fas fa-bookmark" style="color: orange" title="To read"></i>
+          <i (click)="read(book, i)" class="fas fa-save" style="color: green" title="Read"></i>
+          <i (click)="deleteBookByUserId(book.id)" class="fas fa-trash" style="color: darkred"  title="Delete"></i>
+        </div>
+        <div class="d-flex mb-4 ">
+          <span *ngIf="cardStates[i] === 'Reading Now'" class="badge badge-info">Reading Now</span>
+          <span *ngIf="cardStates[i] === 'To Read'" class="badge badge-warning">To Read</span>
+          <span *ngIf="cardStates[i] === 'Read'" class="badge badge-success">Read</span>
+        </div>
+        <div class="rating">
+          <input type="radio" [id]="'star5-' + book.id" [checked]="book.rating === 5" [name]="'rating-' + book.id" (click)="addRating(book.id, 5)">
+          <label [for]="'star5-' + book.id"></label>
+          <input type="radio" [id]="'star4-' + book.id" [checked]="book.rating === 4" [name]="'rating-' + book.id" (click)="addRating(book.id, 4)">
+          <label [for]="'star4-' + book.id"></label>
+          <input type="radio" [id]="'star3-' + book.id" [checked]="book.rating === 3" [name]="'rating-' + book.id" (click)="addRating(book.id, 3)">
+          <label [for]="'star3-' + book.id"></label>
+          <input type="radio" [id]="'star2-' + book.id" [checked]="book.rating === 2" [name]="'rating-' + book.id" (click)="addRating(book.id, 2)">
+          <label [for]="'star2-' + book.id"></label>
+          <input type="radio" [id]="'star1-' + book.id" [checked]="book.rating === 1" [name]="'rating-' + book.id" (click)="addRating(book.id, 1)">
+          <label [for]="'star1-' + book.id"></label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

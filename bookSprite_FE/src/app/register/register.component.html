@@ -1,0 +1,16 @@
+<div class="wrapper">
+  <h1><b>Sign up</b></h1>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <input type="text" id="firstname" formControlName="firstname" placeholder="Firstname"/>
+    <input type="text" id="lastname" formControlName="lastname" placeholder="Lastname"/>
+    <input type="email" id="email" formControlName="email" placeholder="Email">
+    <input type="password" id="password" formControlName="password" placeholder="Password"/>
+    <button type="submit" [disabled]="registerForm.invalid">Sign up</button>
+  </form>
+  <div *ngIf="errorMessage" style="color: red;">
+    {{ errorMessage }}
+  </div>
+  <div class="member">
+   Already have an account?<a routerLink="/login">Login!</a>
+  </div>
+</div>

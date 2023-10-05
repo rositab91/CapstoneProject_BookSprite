@@ -1,0 +1,45 @@
+.example-loading-shade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 56px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.15);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+table {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  min-width: 500px;
+}
+
+th.mat-header-cell {
+  text-align: left;
+  max-width: 300px;
+}
+
+html,
+body,
+.intro {
+  height: 100%;
+}
+
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #fff;
+
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(to top, rgb(255, 255, 255), rgb(197, 200, 153));
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(to top, rgb(255, 255, 255), rgb(197, 200, 153))
+}
+
+button {
+  background-color: #C3938C;
+  color: #59595B
+}

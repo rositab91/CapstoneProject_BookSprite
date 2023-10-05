@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+<div class="container">
+  <h2 class="text-center">Search for a book</h2>
+  <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+    <br>
+    <div class="form-group">
+      <input type="text" formControlName="title" placeholder="Enter title here" name="title" class="input" id="title">
+      <span class="text-danger" *ngIf="bookForm.get('title').touched && bookForm.get('title').hasError('required')">Fill out this field</span>
+    </div><br>
+    <button>Search</button>
+  </form>
+</div>

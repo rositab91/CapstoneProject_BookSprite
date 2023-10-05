@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<div class="container-fluid">
+  <mat-progress-spinner class="example-loading-shade" *ngIf="isLoading"></mat-progress-spinner>
+  <br>
+
+  <button class="btn float-right"
+          (click)="goBack()"
+          color="accent">
+    <i class="fas fa-chevron-left"></i> Back
+  </button>
+
+  <br>
+  <br>
+  <section class="intro">
+    <div class="gradient-custom h-100">
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div id="datatable">
+                <table class="table table-bordered table-hover table-responsive">
+                  <thead>
+                  <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Authors</th>
+                    <th scope="col" style="width: 150%">Description</th>
+                    <th scope="col">Publisher</th>
+                    <th scope="col">Published Date</th>
+                    <th scope="col">Ratings</th>
+                    <th scope="col">Page Count</th>
+                    <th scope="col" style="border: none"></th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr *ngFor="let book of paginatedBooks; let i = index">
+                    <td style="text-align: center; vertical-align: middle;">
+                      <img src="{{ book?.volumeInfo?.imageLinks?.thumbnail }}" alt="Image">
+                    </td>
+                    <td style="vertical-align: middle;"><b>{{ book?.volumeInfo?.title }}</b></td>
+                    <td style="vertical-align: middle;">{{ book?.volumeInfo?.authors }}</td>
+                    <td style="vertical-align: middle;"><em>{{ book?.volumeInfo?.description }}</em></td>
+                    <td style="vertical-align: middle;">{{ book?.volumeInfo?.publisher }}</td>
+                    <td style="vertical-align: middle;">{{ book?.volumeInfo?.publishedDate }}</td>
+                    <td style="vertical-align: middle;">{{ book?.volumeInfo?.averageRating }}</td>
+                    <td style="vertical-align: middle;">{{ book?.volumeInfo?.pageCount }}</td>
+                    <td style="vertical-align: middle">
+                        <i class="fa fa-circle-plus" style="cursor: pointer" (click)="addbook(book, i)"></i>
+                    </td>
+                  </tr>
+
+                  </tbody>
+                </table>
+                <div class="pagination">
+                  <button (click)="previousPage()" [disabled]="currentPage === 1" class="btn">
+                    <i class="fas fa-chevron-left"></i> <!-- Font Awesome icon for Previous -->
+                  </button>
+                  <span>Page {{ currentPage }}</span>
+                  <button (click)="nextPage()" [disabled]="currentPage * selectedPageSize >= books?.length" class="btn">
+                    <i class="fas fa-chevron-right"></i> <!-- Font Awesome icon for Next -->
+                  </button>
+
+                  <!-- Dropdown for Rows per page -->
+                  <div class="rows-per-page">
+                    Rows per page:
+                    <select [(ngModel)]="selectedPageSize" (change)="onPageSizeChange()">
+                      <option *ngFor="let option of pageSizeOptions" [value]="option">{{ option }}</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+</div>

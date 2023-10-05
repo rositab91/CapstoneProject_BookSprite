@@ -1,0 +1,15 @@
+<div class="wrapper">
+  <h1><b>Login</b></h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <input type="email" id="email" formControlName="email" placeholder="Email"/>
+      <input type="password" id="password" formControlName="password" placeholder="Password"/>
+      <button type="submit" [disabled]="loginForm.invalid">Login</button>
+  </form>
+  <div *ngIf="errorMessage" style="color: red;">
+    {{ errorMessage }}
+  </div>
+  <div class="member">
+    Don't have an account?<a routerLink="/register">Create one!</a>
+  </div>
+</div>
+

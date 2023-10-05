@@ -1,0 +1,8 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="navbar-brand">Welcome, {{ user }}!</div> <span><img src="../../assets/appLogo.svg" width="35px"></span>
+  <div class="navbar-nav">
+    <a class="nav-item nav-link" routerLink="/googlebooks"  routerLinkActive="active">Search Google Books<span class="sr-only">(current)</span></a>
+    <a class="nav-item nav-link" routerLink="/mybooks"  routerLinkActive="active">My Books</a>
+  </div>
+  <div class="ml-lg-auto"><a class="nav-item nav-link" style="cursor: pointer" (click)="logout()">Logout</a></div>
+</nav>
