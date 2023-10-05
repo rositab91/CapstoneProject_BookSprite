@@ -28,7 +28,7 @@ Benvenuto nel repository di BookSprite, la soluzione perfetta per gli appassiona
     - Configura il tuo database PostgreSQL e aggiorna `application.yml` con le tue credenziali.
     - Esegui l'applicazione.
 
-⚠️ **Attenzione/Importante**: Istruzioni o informazioni importanti vanno qui.
+⚠️ **Attenzione/Importante**
 
 Dopo aver creato le tabelle, effettuare il seguente cambiamento per garantire che la descrizione dei libri possa essere conservata correttamente:
     - Naviga alla tabella google_books_info_volume.
@@ -86,7 +86,7 @@ Welcome to the BookSprite repository, the perfect solution for book enthusiasts!
     - Set up your PostgreSQL database and update `application.yml` with your credentials.
     - Start the application.
   
-⚠️ Caution/Important: Important instructions or information are provided here.
+⚠️ **Caution/Important**
 
 After creating the tables, perform the following change to ensure book descriptions are stored properly:
     - Navigate to the google_books_info_volume table.
@@ -144,7 +144,7 @@ Bienvenue sur le dépôt de BookSprite, la solution parfaite pour les amateurs d
     - Configurez votre base de données PostgreSQL et mettez à jour `application.yml` avec vos identifiants.
     - Démarrez l'application.
   
-⚠️ Attention/Important: Des instructions ou des informations importantes sont fournies ici.
+⚠️ **Attention/Important**
 
 Après la création des tables, effectuez le changement suivant pour garantir que les descriptions des livres soient correctement stockées :
 
